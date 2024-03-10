@@ -1,21 +1,21 @@
 import { getXataClient } from '@/xata'
 import type { Adapter, DatabaseSession, RegisteredDatabaseSessionAttributes, DatabaseUser, RegisteredDatabaseUserAttributes, UserId } from 'lucia'
 
+interface UserSchema extends RegisteredDatabaseUserAttributes {
+  id: string
+}
+
 interface SessionSchema extends RegisteredDatabaseSessionAttributes {
   id: string
   user_id: string
   expires_at: Date
 }
 
-interface UserSchema extends RegisteredDatabaseUserAttributes {
-  id: string
-}
-
 function transformIntoDatabaseSession(raw: SessionSchema): DatabaseSession {
   const { id, user_id: userId, expires_at: expiresAt, ...attributes } = raw
   return {
-    userId,
     id,
+    userId,
     expiresAt,
     attributes,
   }
