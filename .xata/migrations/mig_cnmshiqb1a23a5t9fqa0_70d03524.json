@@ -1,0 +1,13 @@
+{
+  "id": "mig_cnmshiqb1a23a5t9fqa0",
+  "parentID": "mig_cnmru5kftgm5g25gdg1g",
+  "checksum": "1:70d0352433a965f5ada0ab4beab6b74705a853f1c1b6a7ab4bf988bf3a199e1e",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "expires_at",
+        "table": "session"
+      }
+    }
+  ]
+}

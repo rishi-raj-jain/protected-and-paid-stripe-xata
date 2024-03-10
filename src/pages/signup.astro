@@ -1,0 +1,20 @@
+---
+export const prerender = true
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body class="font-display overflow-x-hidden">
+    <h1>Sign Up</h1>
+    <form method="post" action="/api/sign/up">
+      <label for="email">Email</label>
+      <input id="email" name="email" />
+      <label for="password">Password</label>
+      <input id="password" name="password" />
+      <button>Continue</button>
+    </form>
+  </body>
+</html>

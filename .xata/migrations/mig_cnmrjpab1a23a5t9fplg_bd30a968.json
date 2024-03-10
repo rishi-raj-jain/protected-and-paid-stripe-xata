@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnmrjpab1a23a5t9fplg",
+  "parentID": "mig_cnmrjnab1a23a5t9fpkg",
+  "checksum": "1:bd30a9685153861af8fb8fedb0a535564f3fef2ded7ed42bee821844b2c2756a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "password",
+          "type": "string"
+        },
+        "table": "user"
+      }
+    }
+  ]
+}

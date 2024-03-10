@@ -1,0 +1,28 @@
+{
+  "name": "protected-and-paid-stripe-xata",
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "fmt": "prettier --write '**/*' --ignore-unknown"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.2.3",
+    "@astrojs/tailwind": "^5.1.0",
+    "@xata.io/client": "^0.29.3",
+    "astro": "^4.4.15",
+    "lucia": "^3.1.1",
+    "oslo": "^1.1.3",
+    "stripe": "^14.20.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "dotenv": "^16.4.5",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1"
+  }
+}

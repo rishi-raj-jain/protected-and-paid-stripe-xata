@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnmr3hkftgm5g25gdfo0",
+  "parentID": "mig_cnmr3dib1a23a5t9fpe0",
+  "checksum": "1:e6c3be46431e093ce4d0ad07f363af94e0502168fdc319ae481cacd44628a20a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "paid",
+          "type": "bool"
+        },
+        "table": "users"
+      }
+    }
+  ]
+}

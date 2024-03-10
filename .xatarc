@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Rishi-Raj-Jain-s-workspace-80514q.us-east-1.xata.sh/db/astro-stripe-protected-and-paid",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
