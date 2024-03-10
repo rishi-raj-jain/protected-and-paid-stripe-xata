@@ -1,7 +1,7 @@
 ---
-import { getUser } from '@/lucia/user'
+import { getUserWithData } from '@/lucia/user'
 
-const user = await getUser(Astro.cookies.get('auth_session')?.value)
+const user = await getUserWithData(Astro.cookies.get('auth_session')?.value)
 
 if (!user || (user.paid !== true)) return new Response(null, { status: 403 })
 ---
