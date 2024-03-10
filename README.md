@@ -30,7 +30,7 @@ Learn how to create a Retrieval-Augmented Generation Chatbot using Xata, SvelteK
 
 ### Platform
 
-- [Stripe](https://stripe.com) - A platform for accepting payments globally
+- [Stripe](https://stripe.com) - A platform for accepting payments globally.
 
 - [Vercel](https://vercel.com) - A cloud platform for deploying and scaling web applications.
 
