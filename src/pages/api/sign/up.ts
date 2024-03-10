@@ -8,10 +8,10 @@ export async function POST(context: APIContext): Promise<Response> {
   const xata = getXataClient()
   const user_id = generateId(15)
   const formData = await context.request.formData()
-  const email = formData.get('email') as string
+  const email = (formData.get('email') as string).trim()
   const password = formData.get('password') as string
   const hashed_password = await new Argon2id().hash(password)
-  const existingRecord = await xata.db.user.filter('email', email).getFirst()
+  const existingRecord = await xata.db.user.filter({ email }).getFirst()
   if (existingRecord) return context.redirect('/signin')
   await xata.db.user.create({ email, user_id, hashed_password })
   const session = await lucia.createSession(user_id, {})

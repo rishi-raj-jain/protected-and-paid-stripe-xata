@@ -45,8 +45,8 @@ export class XataAdapter implements Adapter {
     return [databaseSession, databaseUser]
   }
 
-  public async getUserSessions(userId: UserId): Promise<DatabaseSession[]> {
-    const records = await this.controller.db.session.filter('user_id', userId).getAll()
+  public async getUserSessions(user_id: UserId): Promise<DatabaseSession[]> {
+    const records = await this.controller.db.session.filter({ user_id }).getAll()
     return records.map((val) => {
       return transformIntoDatabaseSession(val)
     })
@@ -69,15 +69,16 @@ export class XataAdapter implements Adapter {
     await this.controller.sql`DELETE FROM "session" WHERE expires_at <=${new Date()}`
   }
 
-  private async getSession(sessionId: string): Promise<DatabaseSession | null> {
-    const records = await this.controller.db.session.filter('session_id', sessionId).getFirst()
+  private async getSession(session_id: string): Promise<DatabaseSession | null> {
+    const records = await this.controller.db.session.filter({ session_id }).getFirst()
     return transformIntoDatabaseSession(records)
   }
 
-  private async getUserFromSessionId(sessionId: string): Promise<DatabaseUser | null> {
-    const theSession = await this.controller.db.session.filter('session_id', sessionId).getFirst()
+  private async getUserFromSessionId(session_id: string): Promise<DatabaseUser | null> {
+    const theSession = await this.controller.db.session.filter({ session_id }).getFirst()
     if (theSession) {
-      const getUser = await this.controller.db.user.filter('user_id', theSession.user_id).getFirst()
+      const { user_id } = theSession
+      const getUser = await this.controller.db.user.filter({ user_id }).getFirst()
       if (getUser) return transformIntoDatabaseUser(getUser)
     }
     return null

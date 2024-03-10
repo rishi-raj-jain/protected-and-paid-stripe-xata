@@ -44,7 +44,7 @@ export async function POST({ request }: APIContext) {
       const email = event.data.object?.customer_details?.email
       if (email) {
         const xata = getXataClient()
-        const existingRecord = await xata.db.user.filter('email', email).getFirst()
+        const existingRecord = await xata.db.user.filter({ email }).getFirst()
         if (existingRecord) {
           await xata.db.user.update(existingRecord.id, { paid: true })
         } else {
