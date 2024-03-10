@@ -15,9 +15,8 @@ export async function POST(context: APIContext): Promise<Response> {
   if (existingRecord) {
     if (existingRecord.hashed_password !== null) {
       return context.redirect('/signin')
-    }
-    else {
-      await xata.db.user.update(existingRecord.id, { user_id, hashed_password })  
+    } else {
+      await xata.db.user.update(existingRecord.id, { user_id, hashed_password })
     }
   } else {
     await xata.db.user.create({ email, user_id, hashed_password })
