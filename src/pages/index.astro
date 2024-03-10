@@ -1,7 +1,7 @@
 ---
 import { getUser } from '@/lucia/user'
 
-const user = await getUser(Astro.cookies.get('auth_session').value)
+const user = await getUser(Astro.cookies.get('auth_session')?.value)
 ---
 
 <html lang="en">
