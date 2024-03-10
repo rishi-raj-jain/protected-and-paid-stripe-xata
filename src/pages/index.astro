@@ -1,7 +1,4 @@
 ---
-import { getUser } from '@/lucia/user'
-
-const user = await getUser(Astro.cookies.get('auth_session')?.value)
 ---
 
 <html lang="en">
@@ -10,7 +7,6 @@ const user = await getUser(Astro.cookies.get('auth_session')?.value)
     <meta name="viewport" content="width=device-width" />
   </head>
   <body class="font-display overflow-x-hidden">
-    {user && <>{user.email}</>}
     <form class="p-12" method="post" action="/api/stripe/checkout">
       <button class="rounded border border-black px-4 py-2 duration-150 hover:scale-105"> Get My Product &rarr; </button>
     </form>
