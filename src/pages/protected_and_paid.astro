@@ -3,7 +3,7 @@ import { getUser } from '@/lucia/user'
 
 const user = await getUser(Astro.cookies.get('auth_session')?.value)
 
-if (!user) return new Response(null, { status: 403 })
+if (!user || (user.paid !== true)) return new Response(null, { status: 403 })
 ---
 
 <html lang="en">

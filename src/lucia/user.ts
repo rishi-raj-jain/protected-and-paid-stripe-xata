@@ -1,8 +1,7 @@
 import { lucia } from '.'
-import type { User } from 'lucia'
-import { getXataClient } from '@/xata'
+import { getXataClient, type UserRecord } from '@/xata'
 
-export async function getUser(authCookie: string | undefined): Promise<User | null> {
+export async function getUser(authCookie: string | undefined): Promise<UserRecord | null> {
   if (!authCookie) return null
   const xata = getXataClient()
   const sessionId = lucia.readSessionCookie(authCookie)
