@@ -8,7 +8,7 @@ dotenv.config()
 export default defineConfig({
   output: 'server',
   adapter: node({
-    mode: 'middleware'
+    mode: 'middleware',
   }),
   integrations: [tailwind()],
   vite: {

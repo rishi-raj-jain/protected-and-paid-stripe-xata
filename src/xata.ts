@@ -11,10 +11,9 @@ const tables = [
     name: "user",
     columns: [
       { name: "paid", type: "bool" },
-      { name: "email", type: "string" },
-      { name: "password", type: "text" },
       { name: "hashed_password", type: "string" },
       { name: "user_id", type: "string" },
+      { name: "email", type: "string", unique: true },
     ],
   },
   {
