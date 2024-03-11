@@ -26,3 +26,6 @@ pnpm-debug.log*
 # Xata
 .xata/
 src/xata.ts
+
+# README
+README.md
