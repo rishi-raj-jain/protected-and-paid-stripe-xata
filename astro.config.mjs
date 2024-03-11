@@ -1,13 +1,15 @@
 import dotenv from 'dotenv'
+import node from '@astrojs/node'
 import tailwind from '@astrojs/tailwind'
 import { defineConfig } from 'astro/config'
-import vercel from '@astrojs/vercel/serverless'
 
 dotenv.config()
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: node({
+    mode: 'middleware'
+  }),
   integrations: [tailwind()],
   server: {
     port: 3000,
