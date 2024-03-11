@@ -18,7 +18,7 @@ export async function POST(context: APIContext) {
         },
       },
     ],
-    success_url: 'http://localhost:3000',
+    success_url: 'http://localhost:4321',
   })
   return context.redirect(session.url)
 }
