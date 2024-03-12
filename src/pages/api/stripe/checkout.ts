@@ -1,3 +1,5 @@
+// File: src/pages/api/stripe/checkout.ts
+
 import Stripe from 'stripe'
 import type { APIContext } from 'astro'
 

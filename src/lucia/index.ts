@@ -1,3 +1,5 @@
+// File: src/lucia/index.ts
+
 import { Lucia } from 'lucia'
 import { XataAdapter } from './xata'
 

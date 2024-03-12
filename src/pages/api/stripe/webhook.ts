@@ -1,3 +1,5 @@
+// File: src/pages/api/stripe/webhook.ts
+
 import Stripe from 'stripe'
 import { getXataClient } from '@/xata'
 import type { APIContext } from 'astro'

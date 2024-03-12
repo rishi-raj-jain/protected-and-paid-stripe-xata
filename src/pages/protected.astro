@@ -1,4 +1,6 @@
 ---
+// File: src/pages/protected.astro
+
 import { getUser } from '@/lucia/user'
 
 const user = await getUser(Astro.cookies)

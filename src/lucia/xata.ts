@@ -1,3 +1,5 @@
+// File: src/lucia/xata.ts
+
 import { getXataClient } from '@/xata'
 import type { Adapter, DatabaseSession, RegisteredDatabaseSessionAttributes, DatabaseUser, RegisteredDatabaseUserAttributes, UserId } from 'lucia'
 

@@ -1,3 +1,5 @@
+// File: astro.config.mjs
+
 import dotenv from 'dotenv'
 import node from '@astrojs/node'
 import tailwind from '@astrojs/tailwind'

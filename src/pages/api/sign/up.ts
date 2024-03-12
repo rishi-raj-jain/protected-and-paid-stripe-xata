@@ -1,3 +1,5 @@
+// File: src/pages/api/sign/up.ts
+
 import { generateId } from 'lucia'
 import { lucia } from '@/lucia/index'
 import { getXataClient } from '@/xata'

@@ -1,3 +1,5 @@
+// File: src/lucia/user.ts
+
 import { lucia } from '.'
 import type { User } from 'lucia'
 import type { AstroCookies } from 'astro'
