@@ -11,7 +11,8 @@ export function getSessionID(cookies: AstroCookies): string | null {
 }
 
 export async function getUser(cookies: AstroCookies): Promise<User | null> {
-  const session_id = lucia.readSessionCookie(getSessionID(cookies))
+  const session_id = getSessionID(cookies)
+  if (!session_id) return null
   const { user } = await lucia.validateSession(session_id)
   return user
 }
