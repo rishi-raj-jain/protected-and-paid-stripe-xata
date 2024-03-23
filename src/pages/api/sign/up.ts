@@ -15,11 +15,8 @@ export async function POST({ request, redirect, cookies }: APIContext): Promise<
   const hashed_password = await new Argon2id().hash(password)
   const existingRecord = await xata.db.user.filter({ email }).getFirst()
   if (existingRecord) {
-    if (existingRecord.hashed_password !== null) {
-      return redirect('/signin')
-    } else {
-      await xata.db.user.update(existingRecord.id, { user_id, hashed_password })
-    }
+    if (existingRecord.hashed_password !== null) return redirect('/signin')
+    await xata.db.user.update(existingRecord.id, { user_id, hashed_password })
   } else {
     await xata.db.user.create({ email, user_id, hashed_password })
   }
