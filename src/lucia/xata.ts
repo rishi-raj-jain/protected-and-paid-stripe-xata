@@ -72,12 +72,12 @@ export class XataAdapter implements Adapter {
   }
 
   private async getSession(session_id: string): Promise<DatabaseSession | null> {
-    const records = await this.controller.db.session.filter({ session_id }).getFirst()
+    const records = await this.controller.db.session.filter({ id: session_id }).getFirst()
     return transformIntoDatabaseSession(records)
   }
 
   private async getUserFromSessionId(session_id: string): Promise<DatabaseUser | null> {
-    const theSession = await this.controller.db.session.filter({ session_id }).getFirst()
+    const theSession = await this.controller.db.session.filter({ id: session_id }).getFirst()
     if (theSession) {
       const { user_id } = theSession
       const getUser = await this.controller.db.user.filter({ user_id }).getFirst()
